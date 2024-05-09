@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 
-public class CampusMap {
+public class CampusMap{
 
     ArrayList<Building> buildings;
 
+    
     /* Default constructor, initializes empty ArrayList */
     public CampusMap() {
         buildings = new ArrayList<Building>();
@@ -42,8 +43,16 @@ public class CampusMap {
 
     public static void main(String[] args) {
         CampusMap myMap = new CampusMap();
+        myMap.addBuilding(new Library("Neilson Library", "7 Neilson Drive, Northampton, MA 01063", 5,  true));
+        myMap.addBuilding(new Building("Campus Center", "Smith College Campus Center, 100 Elm St, Northampton, MA 01063", 3));
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("Burton Hall", "46 College Ln, Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("Schacht Center", "21 Belmont Ave, Northampton, MA 01060", 2));
+        myMap.addBuilding(new House("Lamont House", "17 Prospect Street, Northampton, MA 01063", 4, true, true));
+        myMap.addBuilding(new House("Cutter House", "1 Henshaw Ave, Northampton, MA 01063", 3, true, true));
+        myMap.addBuilding(new House("Comstock House", "1 Mandelle Rd, Northampton, MA 01063", 3, true, true));
+        myMap.addBuilding(new Cafe("Compass Cafe", "7 Neilson Drive, Northampton, MA 01063", 1, 100, 200, 200, 50));
         System.out.println(myMap);
     }
     
