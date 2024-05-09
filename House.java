@@ -7,14 +7,14 @@ public class House extends Building{
   ArrayList <String> residents;
 
 
-/**
- * 
- * @param name name of house
- * @param address address of house
- * @param nFloors numbers of floor in house
- * @param hasElevator confirms if house has elevator
- * @param hasDiningRoom confirms if house has dining room
- */
+  /**
+   * 
+   * @param name name of house
+   * @param address address of house
+   * @param nFloors numbers of floor in house
+   * @param hasElevator confirms if house has elevator
+   * @param hasDiningRoom confirms if house has dining room
+   */
   public House(String name, String address, int nFloors, boolean hasElevator, boolean hasDiningRoom) {
    // this is what "extends building" is refering to
     super(name, address, nFloors); // this is a Building
@@ -28,7 +28,7 @@ public class House extends Building{
   public House(String address) {
     this(); // Call default constructor
     this.address = address; // Override address
-}
+  }
 
   /* Overloaded constructor with name, address */
   public House(String name, String address) {
@@ -37,6 +37,10 @@ public class House extends Building{
 
 
 // moveIn and moveOut methods
+  /**
+   * 
+   * @param name name of house
+   */
   public void moveIn(String name){
     this.residents.add(name); //adding resident to the house 
 
@@ -47,12 +51,16 @@ public class House extends Building{
   }
 
 
-// Checking if resident is in 'House'
+  // Checking if resident is in 'House'
+  /**
+   * 
+   * @param person addressing the person that lives in the house
+   * @return whether this 'person' lives in the house or not
+   */
   public boolean isResident(String person){
     if(this.residents.contains(name)){
       System.out.println(name + "is a resident in this house.");
-      return true;
-    }
+      return true;}
     else{
       System.out.println(name + "is not a resident in this house.");
       return false;
@@ -68,7 +76,7 @@ public class House extends Building{
     else{
         System.out.println("Cannot go to " + floorNum + " without an elevator. Sorry.");
     }
-}
+  }
 
 
 // special case
@@ -76,9 +84,7 @@ public class House extends Building{
       System.out.println("Available options at " + this.name + ":\n + enter() \n + exit() \n + goUp() \n + goDown()\n + goToFloor(n)");
   }
   
-  /**
-   * 
-   */
+  
   public String toString(){
     String description = super.toString();
     description = "There are currently " + this.nResidents() + " people living in this house.";
@@ -91,24 +97,14 @@ public class House extends Building{
     }
 
     return description;
-}
+  }
 
-//unfinished work from class
-    // public String toString(){
-
-    // }
-    // String desc = super.toString();
-    // desc += "RESIDENCE HALL";
-    // return desc; 
-  
-
-
-
+//main
   public static void main(String[] args) {
    House myHouse= new House("Comstock House", "1 Manning Rd", 3, true, true);
-  myHouse.moveIn("Jo"); 
-  myHouse.moveIn("Jade"); 
-  myHouse.moveIn("Em"); 
+    myHouse.moveIn("Jo"); 
+    myHouse.moveIn("Jade"); 
+    myHouse.moveIn("Em"); 
   }
 
 }

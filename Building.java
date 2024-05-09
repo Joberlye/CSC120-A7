@@ -11,17 +11,32 @@ public class Building {
     }
 
     /* Overloaded constructor with address only */
+    /**
+     * 
+     * @param address address of building
+     */
     public Building(String address) {
         this(); // Call default constructor
         this.address = address; // Override address
     }
 
     /* Overloaded constructor with name, address */
+    /**
+     * 
+     * @param name of building
+     * @param address address of building
+     */
     public Building(String name, String address) {
         this(name, address, 1); // Call full constructor with hard-coded # floors
     }
 
     /* Full constructor */
+    /**
+     * 
+     * @param name name of building 
+     * @param address address of building
+     * @param nFloors number of floots building has
+     */
     public Building(String name, String address, int nFloors) {
         if (name != null) { this.name = name; }
         if (address != null) { this.address = address; } 
@@ -65,7 +80,10 @@ public class Building {
         this.activeFloor = -1; // We're leaving the building, so we no longer have a valid active floor
         return null; // We're outside now, so the building is null
     }
-
+    /**
+     * 
+     * @param floorNum floor number that resident is on in building
+     */
     public void goToFloor(int floorNum) {
         if (this.activeFloor == -1) {
             throw new RuntimeException("You are not inside this Building. Must call enter() before navigating between floors.");

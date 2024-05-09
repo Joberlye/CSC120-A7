@@ -31,7 +31,7 @@ public class CampusMap{
         System.out.println("-->Successfully removed " + b.getName() + " to the map.");
         return b;
     }
-
+    
     public String toString() {
         String mapString = "DIRECTORY of BUILDINGS";
 

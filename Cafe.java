@@ -64,21 +64,21 @@ public class Cafe extends Building {
       }
 
   // sellCoffee overloaded
-      public void sellCoffee(int size, int nSugarPackets, int nCreams, int cupsRequested){
-        if(size > this.nCoffeeOunces||nSugarPackets > this.nSugarPackets|| nCreams > this.nCreams|| nCups > this.nCups){
-          restock(this.nCoffeeOunces, this.nSugarPackets, this.nCreams, this.nCups);
-          System.out.println("Items at Cafe have been restocked: Coffee = " + this.nCoffeeOunces + " oz, Sugar packets = " + this.nSugarPackets + " packets, Creams = " + this.nCreams + " splashes of cream, Cups = " + this.nCups + " cups.");
-  
-        }
-        // values of Parameter (in this case all ints) decrease
-          this.nCoffeeOunces -= size; 
-          this.nSugarPackets -=  nSugarPackets;
-          this.nCreams -= nCreams;
-          this.nCups -= -cupsRequested;
-          System.out.println("Here is your order of" + size + " oz coffee with " + nSugarPackets + " sugar packets and " + nCreams + " pumps of cream. Have a great day!");
-     
-          if (cupsRequested== 1){
-            System.out.println("Here is your order of" + size + " oz coffee with " + nSugarPackets + " sugar packets and " + nCreams + " splashes of cream. Enjoy!");
+    public void sellCoffee(int size, int nSugarPackets, int nCreams, int cupsRequested){
+    if(size > this.nCoffeeOunces||nSugarPackets > this.nSugarPackets|| nCreams > this.nCreams|| nCups > this.nCups){
+        restock(this.nCoffeeOunces, this.nSugarPackets, this.nCreams, this.nCups);
+        System.out.println("Items at Cafe have been restocked: Coffee = " + this.nCoffeeOunces + " oz, Sugar packets = " + this.nSugarPackets + " packets, Creams = " + this.nCreams + " splashes of cream, Cups = " + this.nCups + " cups.");
+
+    }
+    // values of Parameter (in this case all ints) decrease
+        this.nCoffeeOunces -= size; 
+        this.nSugarPackets -=  nSugarPackets;
+        this.nCreams -= nCreams;
+        this.nCups -= -cupsRequested;
+        System.out.println("Here is your order of" + size + " oz coffee with " + nSugarPackets + " sugar packets and " + nCreams + " pumps of cream. Have a great day!");
+    
+        if (cupsRequested== 1){
+        System.out.println("Here is your order of" + size + " oz coffee with " + nSugarPackets + " sugar packets and " + nCreams + " splashes of cream. Enjoy!");
         }
         else {
             System.out.println("Here are your orders of" + cupsRequested + " " + size + " oz coffees with " + nSugarPackets + " sugar packets and " + nCreams + " splashes of cream. Enjoy!");
@@ -87,28 +87,28 @@ public class Cafe extends Building {
 
 
 
-        // if the house has an elevator 
-        public void goToFloor(int floorNum) {
-            super.goToFloor(activeFloor);
-            if (floorNum == 1){
-                System.out.println("You are now on " + floorNum + ".");
-            }
-            else{
-                System.out.println("Cannot go to " + floorNum + " -- for employees only. Sorry.");
-            }
+    // if the house has an elevator 
+    public void goToFloor(int floorNum) {
+        super.goToFloor(activeFloor);
+        if (floorNum == 1){
+            System.out.println("You are now on " + floorNum + ".");
         }
+        else{
+            System.out.println("Cannot go to " + floorNum + " -- for employees only. Sorry.");
+        }
+    }
 
-        public void showOptions() {
-            super.showOptions();
-            System.out.println("Available options at " + this.name + ":\n + enter() \n + exit() \n + sellCoffee(size, nSugarPackets, nCreams)");
-        }
+    public void showOptions() {
+        super.showOptions();
+        System.out.println("Available options at " + this.name + ":\n + enter() \n + exit() \n + sellCoffee(size, nSugarPackets, nCreams)");
+    }
+
+
+
+    public static void main(String[] args) {
+        Cafe Compass=  new Cafe(12, 3, 4, 1, "Compass Cafe", "3 Bake St.", 2);
+    }
     
-
-
-        public static void main(String[] args) {
-            Cafe Compass=  new Cafe(12, 3, 4, 1, "Compass Cafe", "3 Bake St.", 2);
-        }
-        
     }
 
     
